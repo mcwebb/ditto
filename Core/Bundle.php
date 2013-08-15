@@ -1,4 +1,14 @@
 <?php namespace Ditto\Core;
+/*
+ * Ditto
+ *
+ * Copyright 2013, Matthew Webb <matthewowebb@gmail.com>
+ * Released under the MIT Licence
+ * http://opensource.org/licenses/MIT
+ *
+ * Github:  http://github.com/mcwebb/ditto/
+ * Version: 0.1
+ */
 abstract class Bundle {
 	protected $bundle_name;
 	protected $bundle_type;
