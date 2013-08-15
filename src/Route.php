@@ -7,7 +7,7 @@
  * http://opensource.org/licenses/MIT
  *
  * Github:  http://github.com/mcwebb/ditto/
- * Version: 0.1
+ * Version 0.2
  */
 class Route {
 	private $type;
