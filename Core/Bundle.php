@@ -1,18 +1,18 @@
 <?php namespace Ditto\Core;
-abstract class Module {
-	protected $module_name;
-	protected $module_type;
+abstract class Bundle {
+	protected $bundle_name;
+	protected $bundle_type;
 	static protected $root;
 	static protected $root_abs;
 
 	final public function __construct() {
 		self::$root = Engine::root()
 			. 'vendors/Ditto/'
-			. $this->module_name
+			. $this->bundle_name
 			. '/';
 		self::$root_abs = Engine::root(true)
 			. 'vendors/Ditto/'
-			. $this->module_name
+			. $this->bundle_name
 			. '/';
 		$this->construct();
 	}

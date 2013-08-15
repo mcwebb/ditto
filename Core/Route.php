@@ -10,12 +10,6 @@ class Route {
 
 	public function __construct() { }
 
-	// public function delegate($module) {
-	// 	$this->delegatee = Engine::module($module)->getEngine();
-	// 	$this->type = 'delegation';
-	// 	return $this;
-	// }
-
 	public function pattern($pattern) {
 		$this->pattern = '/^'. str_replace('/','\/',$pattern) .'$/';
 		return $this;

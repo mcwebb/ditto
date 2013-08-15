@@ -9,7 +9,7 @@ class Engine {
 	private $routes = array();
 	private $handler404;
 	private $environment;
-	private $modules = array();
+	private $bundles = array();
 	private $globalStyles = array();
 	private $globalScripts = array();
 
@@ -242,12 +242,12 @@ class Engine {
 		$this->handler404 = $handler;
 	}
 
-	public function module($module_name) {
-		if (!isset($this->modules[$module_name])) {
-			$module_class = "\Ditto\\$module_name\\Module";
-			$this->modules[$module_name] = new $module_class;
+	public function bundle($bundle_name) {
+		if (!isset($this->bundles[$bundle_name])) {
+			$bundle_class = "\Ditto\\$bundle_name\\Bundle";
+			$this->bundles[$bundle_name] = new $bundle_class;
 		}
-		return $this->modules[$module_name];
+		return $this->bundles[$bundle_name];
 	}
 
 	public function route($pattern){
