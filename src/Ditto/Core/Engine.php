@@ -31,9 +31,9 @@ class Engine {
 			ini_set('display_errors', 1); 
 			error_reporting(E_ALL);
 		}
-
+		// TODO: make the root_abs finder more inteligent
 		if (!isset($root))
-			$this->root_abs = substr(__DIR__, 0, -19) .'/';
+			$this->root_abs = substr(__DIR__, 0, -34) .'/';
 		else $this->root_abs = $_SERVER['DOCUMENT_ROOT'] . $root;
 
 		$this->root = substr(
