@@ -7,7 +7,7 @@
  * http://opensource.org/licenses/MIT
  *
  * Github:  http://github.com/mcwebb/ditto/
- * Version 0.2
+ * Version 0.3
  */
 class Template {
 	public static $vars;
