@@ -16,14 +16,13 @@ abstract class Bundle {
 	static protected $root_abs;
 
 	final public function __construct() {
-		self::$root = Engine::root()
-			. 'vendors/Ditto/'
+		$path = 'vendor/ditto/'
+			. strtolower($this->bundle_name)
+			. '-bundle/src/Ditto/'
 			. $this->bundle_name
 			. '/';
-		self::$root_abs = Engine::root(true)
-			. 'vendors/Ditto/'
-			. $this->bundle_name
-			. '/';
+		self::$root = Engine::root() . $path;
+		self::$root_abs = Engine::root(true) . $path;
 		$this->construct();
 	}
 
