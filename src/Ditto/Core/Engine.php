@@ -273,7 +273,7 @@ class Engine {
 		'DELETE' => '_delete',
 		'PUT' => '_update'
 	)) {
-		$route = new Route ($this);
+		$route = new Route;
 		$route
 			->pattern(trim($pattern, '/') .'([a-zA-Z0-9/]*)')
 			->transliterates($transliterates);
