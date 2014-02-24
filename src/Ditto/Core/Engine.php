@@ -239,16 +239,16 @@ class Engine {
 		$this->throw404($urlToMatch);
 	}
 
-	private function throw404($url) {
+	public function throw404($url = null) {
 		if (is_callable($this->handler404))
-			$this->handler404($url);
+			call_user_func($this->handler404);
 		else {
 			header('HTTP/1.0 404 Not Found');
 			exit;
 		}
 	}
 
-	public function set404Handler(callback $handler) {
+	public function set404Handler($handler) {
 		$this->handler404 = $handler;
 	}
 
@@ -273,7 +273,7 @@ class Engine {
 		'DELETE' => '_delete',
 		'PUT' => '_update'
 	)) {
-		$route = new Route;
+		$route = new Route ($this);
 		$route
 			->pattern(trim($pattern, '/') .'([a-zA-Z0-9/]*)')
 			->transliterates($transliterates);
