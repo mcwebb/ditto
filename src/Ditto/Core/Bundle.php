@@ -7,7 +7,7 @@
  * http://opensource.org/licenses/MIT
  *
  * Github:  http://github.com/mcwebb/ditto/
- * Version 0.3
+ * Version 0.4
  */
 abstract class Bundle {
 	protected $bundle_name;
