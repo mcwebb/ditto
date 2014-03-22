@@ -81,13 +81,13 @@ class Engine {
 
 	public function getGlobalScripts() {
 		$s = "\n";
-		if (self::getEnvironment() === 0) {
-			$s .= '<script type="text/javascript">';
-			foreach ($this->globalScripts as $path)
-				$s .= "\n\n/*\n * $path\n */\n"
-					. file_get_contents($_SERVER['DOCUMENT_ROOT'] . $path);
-			$s .= "</script>\n";
-		} else
+		// if (self::getEnvironment() === 0) {
+		// 	$s .= '<script type="text/javascript">';
+		// 	foreach ($this->globalScripts as $path)
+		// 		$s .= "\n\n/*\n * $path\n */\n"
+		// 			. file_get_contents($_SERVER['DOCUMENT_ROOT'] . $path);
+		// 	$s .= "</script>\n";
+		// } else
 			foreach ($this->globalScripts as $path)
 				$s .= '<script type="text/javascript" src="'
 					. $path .'"></script>'."\n";
@@ -96,13 +96,13 @@ class Engine {
 
 	public function getGlobalStyles() {
 		$s = '';
-		if (self::getEnvironment() === 0) {
-			$s .= '<style>';
-			foreach ($this->globalStyles as $path)
-				$s .= "\n\n/*\n * $path\n */\n"
-					. file_get_contents($_SERVER['DOCUMENT_ROOT'] . $path);
-			$s .= "</style>\n";
-		} else
+		// if (self::getEnvironment() === 0) {
+		// 	$s .= '<style>';
+		// 	foreach ($this->globalStyles as $path)
+		// 		$s .= "\n\n/*\n * $path\n */\n"
+		// 			. file_get_contents($_SERVER['DOCUMENT_ROOT'] . $path);
+		// 	$s .= "</style>\n";
+		// } else
 			foreach ($this->globalStyles as $path)
 				$s .= '<link rel="stylesheet" type="text/css" href="'
 					. $path .'" />'."\n";
